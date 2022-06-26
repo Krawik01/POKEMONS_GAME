@@ -1,5 +1,5 @@
 //
-// Created by SZEF on 25.06.2022.
+// Created by s25611 on 25.06.2022.
 //
 
 #ifndef PROJEKT_ENEMY_H

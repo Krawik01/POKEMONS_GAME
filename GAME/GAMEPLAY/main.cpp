@@ -221,7 +221,7 @@ int main() {
     Pokemon *pokemonNow;
     Pokemon *enemy;
 
-    if(fileExists("Save.txt")) {
+    if (fileExists("Save.txt")) {
         cout << "DO YOU WANT LOAD GAME FROM LAST SAVE?\n"
                 "1.YES\n"
                 "2.NO" << endl;
@@ -247,15 +247,14 @@ int main() {
     }
 
 
-
     cout << "Now all that's left to do is pick an opponent to fight" << endl;
 
     //losowanie przeciwnika
     cout << "DRAW OPPONENT" << endl;
     drawEnemy();
-    drawOpponent(enemy,opponentsLeft);
+    drawOpponent(enemy, opponentsLeft);
     cout << "Your enemy is: " << enemyName << "!!!" << endl;
-    cout << enemyName<<" picked " << enemy->getName() << " as Pockemon to fight!!!" << endl;
+    cout << enemyName << " picked " << enemy->getName() << " as Pockemon to fight!!!" << endl;
     // enemy->showStats();
     cout << "****************************************************************************"
          << endl << endl << "\n"
@@ -275,7 +274,7 @@ int main() {
     bool end = false;
     tourNumber = 1;
     //GAME LOOP
-    while(!end) {
+    while (!end) {
 
         if ((userList.empty())) {
             end = true;
@@ -284,14 +283,31 @@ int main() {
         tourNumber++;
         cout << endl << "**********************************************************************" << endl;
         cout << "YOUR MOVE!" << endl;
-        int user2;
+
+
+        string user2;
+
         cin >> user2;
 
+        int decision;
 
-        switch (user2) {
+        if(user2 == "-h"){
 
+            cout << "****************************************************************************\n"
+                                     "*HELP*\n"
+                                    "1.ATTACK\n"
+                                    "2.SWAP POKEMON\n"
+                                    "3.EVOLUTION\n"
+                                    "4.SUPER POWER"
+                 << endl;
+            continue;
+        } else {
+            decision = stoi(user2);
+        }
 
-            //attack
+        switch(decision) {
+
+                //attack
             case 1: {
                 cout << "YOUR MOVE IS ATTACK." << endl;
                 attack(*pokemonNow, *enemy, enemy, false, true, pokemonNow);
@@ -341,30 +357,17 @@ int main() {
                     continue;
                 }
             }
+                //help
 
-        }
-
-
-    }
-}
-
-void deleteLoad(){
-    for (int i = 0; i <listOfAll.size() ; ++i) {
-        for (int j = 0; j < userList.size(); ++j) {
-            if(userList.at(j)->getPower() == listOfAll.at(i)->getPower()){
-                cout << listOfAll.at(i)->getName() << " Deleted." << endl;
-                listOfAll.erase(listOfAll.cbegin() + i);
-                deleteLoad();
-            }
         }
     }
 }
 
-inline bool fileExists (const std::string& name) {
-    ifstream f(name.c_str());
-    return f.good();
-}
 
+
+//void help(){
+//    cin
+//}
 void startNewGame(){
     //GAME START *****************************************************************************************
 
@@ -382,6 +385,103 @@ void startNewGame(){
     //  areYouReady(enemy);
 
     // *****************************************************************************************************
+
+}
+void levelSelect() {
+    cout << "CHOOSE DIFFICULTY LEVEL" << endl << "1.EASY" << endl <<"2.NORMAL" << endl << "3.HARD"  << endl;
+
+    cin >> dificultLevel;
+
+    if(dificultLevel==1){
+        opponentsLeft = 2;
+        cout << "EASY-MODE" << endl;
+    }
+    else if(dificultLevel == 2){
+        opponentsLeft = 3;
+        cout << "NORMAL-MODE" << endl;
+
+    }
+    else if(dificultLevel == 3){
+        opponentsLeft = 4;
+        cout << "HARD-MODE" << endl;
+
+    } else {
+        cout << "WRONG NUMBER! TRY AGAIN." << endl;
+        levelSelect();
+    }
+}
+void pickUserPokemons(){
+    int user;
+    cout << "choose your pokemons" << endl;
+
+
+    for (int i = 1; i <= 6; ++i) {
+        int user;
+        try {
+            showListToSelect();
+            cin >> user;
+            if (user < listOfAll.size() + 1) {
+                userList.push_back(listOfAll.at(user - 1));
+                cout << userList.at(i - 1)->getName() << " - has been added" << endl;
+                listOfAll.erase(listOfAll.begin() + (user - 1));
+            } else {
+                cout << "WRONG NUMBER. TRY AGAIN" << endl;
+                i--;
+            }
+        } catch (...) {
+
+        }
+    }
+}
+void pickUserPokemonFightNow(Pokemon *&pokemon){
+    int user;
+    bool pick = false;
+
+    while (!pick) {
+        try {
+
+            cin >> user;
+            if (user < listOfAll.size() + 1) {
+                Pokemon *&pokemonNow = userList.at(user - 1);
+
+                cout << "GREAT. " << pokemonNow->getName() << " is excelent choise. " << endl;
+
+                //  pokemonNow->showStats();
+                pick = true;
+            } else {
+                cout << "WRONG NUMBER. TRY AGAIN" << endl;
+                continue;
+            }
+        } catch (...) {
+
+        }
+    }
+    pokemon = userList.at(user-1);
+}
+void showUserPokemons(){
+    cout << "THATS UR TEAM! -  " << endl;
+
+    for (int i = 0; i < userList.size(); ++i) {
+        cout << i+1 << "." << userList.at(i)->getName() << " ";
+    }
+    cout << endl;
+};
+void showListToSelect(){
+    for (int i = 0; i < listOfAll.size(); ++i) {
+        if ((i != 0) && (i % 3 == 0)) {
+            cout << i + 1 << '.' <<listOfAll.at(i)->getName() << " " << endl;
+        } else {
+            cout << i + 1 << '.' <<listOfAll.at(i)->getName() << " ";
+        }
+    }
+    cout << endl;
+}
+void checkStop(int opponentsLeft, bool end){
+    if((userList.size() > 0)||(opponentsLeft <=0)){
+        end = true;
+    } else {
+        end = false;
+    }
 
 }
 
@@ -402,7 +502,6 @@ void save() {
             save << userList.at(i)->getLvl() << endl;
             save << userList.at(i)->getPower() << endl;
             save << userList.at(i)->getNumberOfUsesPower() << endl;
-           // save << userList.at(i)->getPowerName() << endl;
             save << userList.at(i)->getPowerDamage() << endl;
             save << userList.at(i)->getExp() << endl;
             save << userList.at(i)->getGivesExp() << endl;
@@ -414,8 +513,6 @@ void save() {
         save.close();
 
 }
-
-
 void loadSave(){
 
     string myText;
@@ -562,174 +659,19 @@ void loadPokemon(Pokemon &pokemon,int type, int strenght, int agility, int lvl, 
     pokemon.setGivesExp(givesExp);
     pokemon.setHp(hp);
 }
-
-void levelSelect() {
-    cout << "CHOOSE DIFFICULTY LEVEL" << endl << "1.EASY" << endl <<"2.NORMAL" << endl << "3.HARD"  << endl;
-
-    cin >> dificultLevel;
-
-    if(dificultLevel==1){
-        opponentsLeft = 2;
-        cout << "EASY-MODE" << endl;
-    }
-     else if(dificultLevel == 2){
-        opponentsLeft = 3;
-        cout << "NORMAL-MODE" << endl;
-
-    }
-    else if(dificultLevel == 3){
-        opponentsLeft = 4;
-        cout << "HARD-MODE" << endl;
-
-    } else {
-        cout << "WRONG NUMBER! TRY AGAIN." << endl;
-        levelSelect();
-    }
+inline bool fileExists (const std::string& name) {
+    ifstream f(name.c_str());
+    return f.good();
 }
-
-void evolve(Pokemon &pToEvolve) {
-
-
-        int levelUp = 0;
-
-        if (pToEvolve.getExp() < 3) {
-            levelUp = 0;
-            cout << "pockemon have: " << pToEvolve.getExp() << " EXP right now. YOU CAN'T LEVEL UP HIM YET! "
-                 << endl;
-        }
-
-        if (pToEvolve.getExp() > 3) {
-            levelUp = 1;
-            pToEvolve.setExp(pToEvolve.getExp() - 3);
-            cout << "WHAT U WANT TO UPGRADE?\n"
-                    "1.Strenght\n"
-                    "2.Hp\n"
-                    "3.Agility"
-                    << endl;
-            int upgrade;
-            cin >> upgrade;
-            if(upgrade == 1){
-                pToEvolve.setStrength(pToEvolve.getStrength() * pToEvolve.getLvl());
+void deleteLoad(){
+    for (int i = 0; i <listOfAll.size() ; ++i) {
+        for (int j = 0; j < userList.size(); ++j) {
+            if(userList.at(j)->getPower() == listOfAll.at(i)->getPower()){
+                listOfAll.erase(listOfAll.cbegin() + i);
+                deleteLoad();
             }
-            else if(upgrade == 2) {
-                pToEvolve.setHp(pToEvolve.getHp() + 15);
-            }
-            else if(upgrade == 3 ) {
-                pToEvolve.setAgility(pToEvolve.getAgility() + 1);
-            } else {
-                cout << "WRONG NUMBER! TRY AGAIN" << endl;
-                evolve(pToEvolve);
-            }
-            cout << pToEvolve.getName();
-            pToEvolve.setLvl(pToEvolve.getLvl() + 1);
-            cout << " Evolved to -> " << pToEvolve.getName() << "(" << pToEvolve.getLvl() << ")" << endl;
-        }
-
-
-
-}
-void areYouReady(Pokemon *&pokemonNow) {
-    cout << "ARE U READY?" << endl << "1.YES 2.NO"<< endl;
-    int user;
-    cin >> user;
-
-    switch (user) {
-        case 1:
-            cout << "****************************************************************************"
-            << endl <<"EXCELLENT" << endl << "IN THE GAME YOU HAVE SEVERAL OPTIONS SUCH AS:\n"
-                                           "1.ATTACK\n"
-                                           "2.SWAP POKEMON\n"
-                                           "3.EVOLUTION" << endl;
-            cout << pokemonNow->getName();
-
-        case 2:
-            system("exit");
-    }
-}
-void showListToSelect(){
-    for (int i = 0; i < listOfAll.size(); ++i) {
-        if ((i != 0) && (i % 3 == 0)) {
-            cout << i + 1 << '.' <<listOfAll.at(i)->getName() << " " << endl;
-        } else {
-            cout << i + 1 << '.' <<listOfAll.at(i)->getName() << " ";
         }
     }
-    cout << endl;
-}
-
-void pickUserPokemons(){
-    int user;
-    cout << "choose your pokemons" << endl;
-
-
-    for (int i = 1; i <= 6; ++i) {
-        int user;
-        try {
-            showListToSelect();
-            cin >> user;
-            if (user < listOfAll.size() + 1) {
-                userList.push_back(listOfAll.at(user - 1));
-                cout << userList.at(i - 1)->getName() << " - has been added" << endl;
-                listOfAll.erase(listOfAll.begin() + (user - 1));
-            } else {
-                cout << "WRONG NUMBER. TRY AGAIN" << endl;
-                i--;
-            }
-        } catch (...) {
-
-        }
-    }
-}
-void pickUserPokemonFightNow(Pokemon *&pokemon){
-    int user;
-    bool pick = false;
-
-    while (!pick) {
-        try {
-
-            cin >> user;
-            if (user < listOfAll.size() + 1) {
-                Pokemon *&pokemonNow = userList.at(user - 1);
-
-                cout << "GREAT. " << pokemonNow->getName() << " is excelent choise. " << endl;
-
-              //  pokemonNow->showStats();
-                pick = true;
-            } else {
-                cout << "WRONG NUMBER. TRY AGAIN" << endl;
-                continue;
-            }
-        } catch (...) {
-
-        }
-    }
-    pokemon = userList.at(user-1);
-}
-void showUserPokemons(){
-    cout << "THATS UR TEAM! -  " << endl;
-
-    for (int i = 0; i < userList.size(); ++i) {
-        cout << i+1 << "." << userList.at(i)->getName() << " ";
-    }
-    cout << endl;
-};
-bool checkPokemonLifesUser(){
-
-    //user
-   if((userList.at(0)->hp == 0) && (userList.at(1)->hp == 0) && (userList.at(2)->hp == 0)) {
-       return true;
-   } else {
-        return false;
-   }
-
-}
-void checkStop(int opponentsLeft, bool end){
-    if((userList.size() > 0)||(opponentsLeft <=0)){
-        end = true;
-    } else {
-        end = false;
-    }
-
 }
 
 void attack(Pokemon &pAttacking, Pokemon &pBits,Pokemon *&enemy,bool superPower,bool userAttack, Pokemon *&pokemonNow) {
@@ -824,6 +766,78 @@ void attack(Pokemon &pAttacking, Pokemon &pBits,Pokemon *&enemy,bool superPower,
     }
 
 }
+void evolve(Pokemon &pToEvolve) {
+
+
+    int levelUp = 0;
+
+    if (pToEvolve.getExp() < 3) {
+        levelUp = 0;
+        cout << "pockemon have: " << pToEvolve.getExp() << " EXP right now. YOU CAN'T LEVEL UP HIM YET! "
+             << endl;
+    }
+
+    if (pToEvolve.getExp() > 3) {
+        levelUp = 1;
+        pToEvolve.setExp(pToEvolve.getExp() - 3);
+        cout << "WHAT U WANT TO UPGRADE?\n"
+                "1.Strenght\n"
+                "2.Hp\n"
+                "3.Agility"
+             << endl;
+        int upgrade;
+        cin >> upgrade;
+        if(upgrade == 1){
+            pToEvolve.setStrength(pToEvolve.getStrength() * pToEvolve.getLvl());
+        }
+        else if(upgrade == 2) {
+            pToEvolve.setHp(pToEvolve.getHp() + 15);
+        }
+        else if(upgrade == 3 ) {
+            pToEvolve.setAgility(pToEvolve.getAgility() + 1);
+        } else {
+            cout << "WRONG NUMBER! TRY AGAIN" << endl;
+            evolve(pToEvolve);
+        }
+        cout << pToEvolve.getName();
+        pToEvolve.setLvl(pToEvolve.getLvl() + 1);
+        cout << " Evolved to -> " << pToEvolve.getName() << "(" << pToEvolve.getLvl() << ")" << endl;
+    }
+
+
+
+}
+int calculateDamage(Pokemon &pAttacking, Pokemon &pBits){
+
+    if(((pAttacking.getType()==1)&&(pBits.getType()==1))
+       || ((pAttacking.getType()==1)&&(pBits.getType()==4))
+       || ((pAttacking.getType()==1)&&(pBits.getType()==5))
+       || ((pAttacking.getType()==2)&&(pBits.getType()==3))
+       || ((pAttacking.getType()==2)&&(pBits.getType()==4))
+       || ((pAttacking.getType()==3)&&(pBits.getType()==2))
+       || ((pAttacking.getType()==4)&&(pBits.getType()==5))
+       || ((pAttacking.getType()==5)&&(pBits.getType()==5))
+       || ((pAttacking.getType()==6)&&(pBits.getType()==3))
+       || ((pAttacking.getType()==6)&&(pBits.getType()==6))){
+        return 2;
+    } else if
+            (((pAttacking.getType()==1)&&(pBits.getType()==6))
+             || ((pAttacking.getType()==2)&&(pBits.getType()==1))
+             || ((pAttacking.getType()==2)&&(pBits.getType()==5))
+             || ((pAttacking.getType()==3)&&(pBits.getType()==6))
+             || ((pAttacking.getType()==4)&&(pBits.getType()==1))
+             || ((pAttacking.getType()==4)&&(pBits.getType()==2))
+             || ((pAttacking.getType()==5)&&(pBits.getType()==2))
+             || ((pAttacking.getType()==5)&&(pBits.getType()==3))
+             || ((pAttacking.getType()==5)&&(pBits.getType()==4))
+             || ((pAttacking.getType()==6)&&(pBits.getType()==2))
+             || ((pAttacking.getType()==6)&&(pBits.getType()==4))){
+        return 3;
+    } else{
+        return 1;
+    }
+
+}
 
 void enemyMove(Pokemon *enemy,Pokemon *&pokemonNow) {
     cout << "**********************************************************************" << endl;
@@ -864,8 +878,6 @@ void enemyMove(Pokemon *enemy,Pokemon *&pokemonNow) {
         cout << "YOUR " << pokemonNow->getName() << " HAVE ALREADY " << pokemonNow->getHp() << " HP LEFT" << endl;
     }
 }
-
-
 void drawEnemy(){
     srand(time(0));
     int drawName = (rand() % names.size()) + 1;
@@ -876,7 +888,6 @@ void drawEnemy(){
     names.erase(names.begin() + drawName);
 
 }
-
 void drawOpponent(Pokemon *&pokemon, int opponentsLeft) {
     if (listOfAll.size() !=0 ) {
 
@@ -891,34 +902,4 @@ void drawOpponent(Pokemon *&pokemon, int opponentsLeft) {
     opponentsLeft--;
 
 }
-int calculateDamage(Pokemon &pAttacking, Pokemon &pBits){
 
-    if(((pAttacking.getType()==1)&&(pBits.getType()==1))
-    || ((pAttacking.getType()==1)&&(pBits.getType()==4))
-    || ((pAttacking.getType()==1)&&(pBits.getType()==5))
-    || ((pAttacking.getType()==2)&&(pBits.getType()==3))
-    || ((pAttacking.getType()==2)&&(pBits.getType()==4))
-    || ((pAttacking.getType()==3)&&(pBits.getType()==2))
-    || ((pAttacking.getType()==4)&&(pBits.getType()==5))
-    || ((pAttacking.getType()==5)&&(pBits.getType()==5))
-    || ((pAttacking.getType()==6)&&(pBits.getType()==3))
-    || ((pAttacking.getType()==6)&&(pBits.getType()==6))){
-        return 2;
-    } else if
-           (((pAttacking.getType()==1)&&(pBits.getType()==6))
-           || ((pAttacking.getType()==2)&&(pBits.getType()==1))
-           || ((pAttacking.getType()==2)&&(pBits.getType()==5))
-           || ((pAttacking.getType()==3)&&(pBits.getType()==6))
-           || ((pAttacking.getType()==4)&&(pBits.getType()==1))
-           || ((pAttacking.getType()==4)&&(pBits.getType()==2))
-           || ((pAttacking.getType()==5)&&(pBits.getType()==2))
-           || ((pAttacking.getType()==5)&&(pBits.getType()==3))
-           || ((pAttacking.getType()==5)&&(pBits.getType()==4))
-           || ((pAttacking.getType()==6)&&(pBits.getType()==2))
-           || ((pAttacking.getType()==6)&&(pBits.getType()==4))){
-            return 3;
-        } else{
-        return 1;
-    }
-
-}
