@@ -261,7 +261,8 @@ int main() {
                             "1.ATTACK\n"
                             "2.SWAP POKEMON\n"
                             "3.EVOLUTION\n"
-                            "4.SUPER POWER"
+                            "4.SUPER POWER\n"
+                            "\"-h\" - HELP"
          << endl;
 
     //ROZGRYWKA
@@ -272,7 +273,6 @@ int main() {
 
 
     bool end = false;
-    tourNumber = 1;
     //GAME LOOP
     while (!end) {
 
@@ -280,19 +280,15 @@ int main() {
             end = true;
         }
 
-        tourNumber++;
         cout << endl << "**********************************************************************" << endl;
         cout << "YOUR MOVE!" << endl;
 
 
         string user2;
-
         cin >> user2;
 
         int decision;
-
         if(user2 == "-h"){
-
             cout << "****************************************************************************\n"
                                      "*HELP*\n"
                                     "1.ATTACK\n"
@@ -330,10 +326,8 @@ int main() {
             }
                 //evolve pokemon
             case 3: {
-                cout << "YOUR MOVE IS EVOLVE." << endl;
 
                 if (pokemonNow->getLvl() < 3) {
-
                     evolve(*pokemonNow);
                     enemyMove(enemy, pokemonNow);
                     continue;
@@ -364,10 +358,6 @@ int main() {
 }
 
 
-
-//void help(){
-//    cin
-//}
 void startNewGame(){
     //GAME START *****************************************************************************************
 
@@ -778,6 +768,7 @@ void evolve(Pokemon &pToEvolve) {
     }
 
     if (pToEvolve.getExp() > 3) {
+        cout << "YOUR MOVE IS EVOLVE." << endl;
         levelUp = 1;
         pToEvolve.setExp(pToEvolve.getExp() - 3);
         cout << "WHAT U WANT TO UPGRADE?\n"
