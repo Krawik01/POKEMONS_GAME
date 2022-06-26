@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="PROJEKT"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="PROJEKT">
+				<Option output="C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/cmake-build-debug/PROJEKT.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/cmake-build-debug/Makefile&quot;  VERBOSE=1 PROJEKT"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="PROJEKT/fast">
+				<Option output="C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/cmake-build-debug/PROJEKT.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/cmake-build-debug/Makefile&quot;  VERBOSE=1 PROJEKT/fast"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/GAME/GAMEPLAY/main.cpp">
+			<Option target="PROJEKT"/>
+		</Unit>
+		<Unit filename="C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/GAME/POKSY/Beedrill.cpp">
+			<Option target="PROJEKT"/>
+		</Unit>
+		<Unit filename="C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/GAME/POKSY/Beedrill.h">
+			<Option target="PROJEKT"/>
+		</Unit>
+		<Unit filename="C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/GAME/POKSY/Blastoise.cpp">
+			<Option target="PROJEKT"/>
+		</Unit>
+		<Unit filename="C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/GAME/POKSY/Blastoise.h">
+			<Option target="PROJEKT"/>
+		</Unit>
+		<Unit filename="C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/GAME/POKSY/Butterfree.cpp">
+			<Option target="PROJEKT"/>
+		</Unit>
+		<Unit filename="C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/GAME/POKSY/Butterfree.h">
+			<Option target="PROJEKT"/>
+		</Unit>
+		<Unit filename="C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/GAME/POKSY/Charizard.cpp">
+			<Option target="PROJEKT"/>
+		</Unit>
+		<Unit filename="C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/GAME/POKSY/Charizard.h">
+			<Option target="PROJEKT"/>
+		</Unit>
+		<Unit filename="C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/GAME/POKSY/Emboar.cpp">
+			<Option target="PROJEKT"/>
+		</Unit>
+		<Unit filename="C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/GAME/POKSY/Emboar.h">
+			<Option target="PROJEKT"/>
+		</Unit>
+		<Unit filename="C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/GAME/POKSY/Empoleon.cpp">
+			<Option target="PROJEKT"/>
+		</Unit>
+		<Unit filename="C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/GAME/POKSY/Empoleon.h">
+			<Option target="PROJEKT"/>
+		</Unit>
+		<Unit filename="C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/GAME/POKSY/Feraligatr.cpp">
+			<Option target="PROJEKT"/>
+		</Unit>
+		<Unit filename="C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/GAME/POKSY/Feraligatr.h">
+			<Option target="PROJEKT"/>
+		</Unit>
+		<Unit filename="C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/GAME/POKSY/Gengar.cpp">
+			<Option target="PROJEKT"/>
+		</Unit>
+		<Unit filename="C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/GAME/POKSY/Gengar.h">
+			<Option target="PROJEKT"/>
+		</Unit>
+		<Unit filename="C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/GAME/POKSY/Golem.cpp">
+			<Option target="PROJEKT"/>
+		</Unit>
+		<Unit filename="C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/GAME/POKSY/Golem.h">
+			<Option target="PROJEKT"/>
+		</Unit>
+		<Unit filename="C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/GAME/POKSY/Lapras.cpp">
+			<Option target="PROJEKT"/>
+		</Unit>
+		<Unit filename="C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/GAME/POKSY/Lapras.h">
+			<Option target="PROJEKT"/>
+		</Unit>
+		<Unit filename="C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/GAME/POKSY/Machamp.cpp">
+			<Option target="PROJEKT"/>
+		</Unit>
+		<Unit filename="C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/GAME/POKSY/Machamp.h">
+			<Option target="PROJEKT"/>
+		</Unit>
+		<Unit filename="C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/GAME/POKSY/Nidoqueen.cpp">
+			<Option target="PROJEKT"/>
+		</Unit>
+		<Unit filename="C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/GAME/POKSY/Nidoqueen.h">
+			<Option target="PROJEKT"/>
+		</Unit>
+		<Unit filename="C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/GAME/POKSY/Oddish.cpp">
+			<Option target="PROJEKT"/>
+		</Unit>
+		<Unit filename="C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/GAME/POKSY/Oddish.h">
+			<Option target="PROJEKT"/>
+		</Unit>
+		<Unit filename="C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/GAME/POKSY/Pokemon.cpp">
+			<Option target="PROJEKT"/>
+		</Unit>
+		<Unit filename="C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/GAME/POKSY/Pokemon.h">
+			<Option target="PROJEKT"/>
+		</Unit>
+		<Unit filename="C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/GAME/POKSY/Poliwrath.cpp">
+			<Option target="PROJEKT"/>
+		</Unit>
+		<Unit filename="C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/GAME/POKSY/Poliwrath.h">
+			<Option target="PROJEKT"/>
+		</Unit>
+		<Unit filename="C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/GAME/POKSY/Serperior.cpp">
+			<Option target="PROJEKT"/>
+		</Unit>
+		<Unit filename="C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/GAME/POKSY/Serperior.h">
+			<Option target="PROJEKT"/>
+		</Unit>
+		<Unit filename="C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/GAME/POKSY/Venusaur.cpp">
+			<Option target="PROJEKT"/>
+		</Unit>
+		<Unit filename="C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/GAME/POKSY/Venusaur.h">
+			<Option target="PROJEKT"/>
+		</Unit>
+		<Unit filename="C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/GAME/POKSY/Vespiquen.cpp">
+			<Option target="PROJEKT"/>
+		</Unit>
+		<Unit filename="C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/GAME/POKSY/Vespiquen.h">
+			<Option target="PROJEKT"/>
+		</Unit>
+		<Unit filename="C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/GAME/POKSY/Victreebel.cpp">
+			<Option target="PROJEKT"/>
+		</Unit>
+		<Unit filename="C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/GAME/POKSY/Victreebel.h">
+			<Option target="PROJEKT"/>
+		</Unit>
+		<Unit filename="C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/GAME/POKSY/Wailord.cpp">
+			<Option target="PROJEKT"/>
+		</Unit>
+		<Unit filename="C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/GAME/POKSY/Wailord.h">
+			<Option target="PROJEKT"/>
+		</Unit>
+		<Unit filename="C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/GAME/POKSY/Walrein.cpp">
+			<Option target="PROJEKT"/>
+		</Unit>
+		<Unit filename="C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/GAME/POKSY/Walrein.h">
+			<Option target="PROJEKT"/>
+		</Unit>
+		<Unit filename="C:/Users/SZEF/Desktop/POKEMON_GAME-master - wersja bez enemy prawilna/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
