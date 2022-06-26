@@ -241,7 +241,6 @@ int main() {
     }
 
 
-
     cout << "Now all that's left to do is pick an opponent to fight" << endl;
 
     //losowanie przeciwnika
@@ -405,11 +404,12 @@ void loadSave(){
 
     ifstream MyReadFile("Save.txt");
 
+    getline(MyReadFile,myText);
+    cout << myText << endl;
+    round = stoi(myText);
+
     while (getline (MyReadFile,myText)) {
 
-         cout << myText << endl;
-
-        round = stoi(myText);
 
          if (myText == ";") {
             getline(MyReadFile, myText);
@@ -448,7 +448,6 @@ void loadSave(){
             if ((name == "Beedrill")||(name == "Weedle")||(name == "Kakuna")){
                 auto *pokemon = new Beedrill;
                 loadPokemon(*pokemon,type,strenght,agility,lvl,power,numberOfPowers,powerDamage,exp,givesExp,hp);
-                cout << pokemon->getPower();
                 userList.push_back(pokemon);
             } else if ((name == "Blastoise")||(name == "Squirtle")||(name == "Wartortle")) {
                 auto *pokemon = new Blastoise;
@@ -527,12 +526,10 @@ void loadSave(){
                 loadPokemon(*pokemon,type,strenght,agility,lvl,power,numberOfPowers,powerDamage,exp,givesExp,hp);
                 userList.push_back(pokemon);
             }
-            cout << name  << "Created. " << endl;
+
         }
     }
-    for (int i = 0; i < userList.size(); ++i) {
-        cout << userList.at(i)->getName() << "added" << endl;
-    }
+    cout << "SAVE HAS BEEN LOADED SUCCESSFUL." << endl;
     MyReadFile.close();
 }
 void loadPokemon(Pokemon &pokemon,int type, int strenght, int agility, int lvl, int power, int numberOfUsesPower,int powerDamage, int exp, int givesExp,int hp){
