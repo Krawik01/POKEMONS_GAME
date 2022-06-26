@@ -32,8 +32,6 @@ using namespace std;
 vector<Pokemon*> listOfAll;
 vector<Pokemon*> userList;
 
-
-int tourNumber=1;
 int round=1;
 int dificultLevel=2;
 int opponentsLeft;
@@ -58,9 +56,12 @@ void pickUserPokemons();
  * pickUserPokemonFightNow - funkcja pozwalajaca wybrac aktualnie walczacego pokemona przez gracza.
  */
 void pickUserPokemonFightNow(Pokemon *&pokemon);
-
-
-void areYouReady(Pokemon *&pokemon);
+/**
+ *
+ * @param opponentsLeft
+ * @param end
+ * checkStop - sprawdza czy powinna zostac przerwana.
+ */
 void checkStop(int opponentsLeft, bool end);
 
 /**
@@ -110,26 +111,26 @@ void drawEnemy();
  *
  * @param enemy
  * @param pokemonNow
- * enemyMove - funkcja wybierajaca nam nastepny ruch przeciwnika(PC) dzieki liczba pseudolosowym
+ * enemyMove - funkcja wybierajaca nam nastepny ruch przeciwnika(PC) dzieki liczba pseudolosowym.
  */
 void enemyMove(Pokemon *enemy,Pokemon *&pokemonNow);
 
 /**
- * showListToSelect - funckja pokazujca nam liste dostepnych pokemonow do wybrania
+ * showListToSelect - funckja pokazujca nam liste dostepnych pokemonow do wybrania.
  */
 void showListToSelect();
 
 /**
- * select difficult level for the game -> opponents 2-4
+ * select difficult level for the game -> opponents 2-4.
  */
 void levelSelect();
 /**
- * save - zapisuje postepy gracza do pliku txt
+ * save - zapisuje postepy gracza do pliku txt.
  */
 void save();
 
 /**
- * loadSave - wczytuje postepy gracza z pliku txt
+ * loadSave - wczytuje postepy gracza z pliku txt.
  */
 void loadSave();
 /**
@@ -145,23 +146,23 @@ void loadSave();
  * @param exp
  * @param givesExp
  * @param hp
- * loadPokemon - funckja slużąca do stworzenia objektu na podstawie danych z pliku txt
+ * loadPokemon - funckja slużąca do stworzenia objektu na podstawie danych z pliku txt.
  */
 void loadPokemon(Pokemon &pokemon,int type, int strenght, int agility, int lvl, int power, int numberOfUsesPower,int powerDamage, int exp, int givesExp,int hp);
 /**
- * startNewGame - funckja wyświetlająca wiadomosc tekstowa gdy gra sie zaczyna od nowa
+ * startNewGame - funckja wyświetlająca wiadomosc tekstowa gdy gra sie zaczyna od nowa.
  */
 void startNewGame();
 /**
  *
  * @param name
  * @return
- * fileExists - funkcja sprawdzajaca czy plik o podanej nazwie istnieje
+ * fileExists - funkcja sprawdzajaca czy plik o podanej nazwie istnieje.
  */
 inline bool fileExists (const std::string& name);
 
 /**
- * deleteLoad - usuwa pokemony na podstawie informacji odczytanych z pliku txt
+ * deleteLoad - usuwa pokemony na podstawie informacji odczytanych z pliku txt.
  */
 void deleteLoad();
 
