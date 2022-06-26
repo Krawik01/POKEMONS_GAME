@@ -160,6 +160,11 @@ void startNewGame();
  */
 inline bool fileExists (const std::string& name);
 
+/**
+ * deleteLoad - usuwa pokemony na podstawie informacji odczytanych z pliku txt
+ */
+void deleteLoad();
+
 
 int main() {
 
@@ -225,7 +230,8 @@ int main() {
 
         if (save == 1) {
             loadSave();
-
+            deleteLoad();
+            cout << "ROUND: " << round << endl;
             cout << "choose the Pokemon that will fight first!" << endl;
             showUserPokemons();
             pickUserPokemonFightNow(pokemonNow);
@@ -239,6 +245,7 @@ int main() {
         startNewGame();
         pickUserPokemonFightNow(pokemonNow);
     }
+
 
 
     cout << "Now all that's left to do is pick an opponent to fight" << endl;
@@ -341,6 +348,17 @@ int main() {
     }
 }
 
+void deleteLoad(){
+    for (int i = 0; i <listOfAll.size() ; ++i) {
+        for (int j = 0; j < userList.size(); ++j) {
+            if(userList.at(j)->getPower() == listOfAll.at(i)->getPower()){
+                cout << listOfAll.at(i)->getName() << " Deleted." << endl;
+                listOfAll.erase(listOfAll.cbegin() + i);
+                deleteLoad();
+            }
+        }
+    }
+}
 
 inline bool fileExists (const std::string& name) {
     ifstream f(name.c_str());
@@ -903,18 +921,4 @@ int calculateDamage(Pokemon &pAttacking, Pokemon &pBits){
         return 1;
     }
 
-
-
 }
-
-//void evolve(Pokemon *pokemonNow){
-//    if(pokemonNow->getLvl() < 3){
-//        cout << pokemonNow->getName();
-//        pokemonNow->setLvl(pokemonNow->getLvl() + 1);
-//        cout << " Evolved to -> " << pokemonNow->getName() <<"(" << pokemonNow->getLvl() << ")" << endl;
-//        continue;
-//
-//    } else {
-//        cout << "The " << pokemonNow->getName() << " is the best evolution." << endl;
-//    }
-//}
